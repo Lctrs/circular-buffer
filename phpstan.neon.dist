@@ -1,0 +1,10 @@
+includes:
+	- phpstan-baseline.neon
+
+parameters:
+	level: max
+	paths:
+		- src/
+		- test/
+		- update-license.php
+	tmpDir: .build/phpstan/

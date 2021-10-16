@@ -1,0 +1,7 @@
+/.build/
+/.tools/*/vendor/
+/test/*/phpunit.xml
+/vendor/
+/infection.json
+/phpcs.xml
+/phpstan.neon
