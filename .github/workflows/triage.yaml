@@ -11,7 +11,7 @@ jobs:
   label:
     name: "Label"
 
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-latest"
 
     steps:
       - name: "Add labels based on branch name"
@@ -22,24 +22,33 @@ jobs:
             const branchPrefixLabels = {
               feature: "enhancement",
               fix: "bug",
-            }
+            };
 
-            const pullRequest = context.payload.pull_request
-            const repository = context.repo
+            const pullRequest = context.payload.pull_request;
 
-            const branchName = pullRequest.head.ref
+            const branchName = pullRequest.head.ref;
 
             const matches = branchName.match(new RegExp('^([^/]+)\/'));
 
-            if (matches instanceof Array && branchPrefixLabels.hasOwnProperty(matches[1])) {
-              const label = branchPrefixLabels[matches[1]]
+            if (!matches instanceof Array) {
+              return;
+            }
 
-              github.rest.issues.addLabels({
+            if (!branchPrefixLabels.hasOwnProperty(matches[1])) {
+              return;
+            }
+
+            const label = branchPrefixLabels[matches[1]];
+
+            try {
+              await github.rest.issues.addLabels({
                 issue_number: pullRequest.number,
                 labels: [
-                  label
+                  label,
                 ],
-                owner: repository.owner,
-                repo: repository.repo,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
               });
+            } catch (error) {
+              core.setFailed(error.message);
             }

@@ -7,9 +7,7 @@ namespace Lctrs\CircularBuffer;
 use OverflowException;
 use UnderflowException;
 
-/**
- * @template T
- */
+/** @template T */
 final class CircularBuffer
 {
     /** @var array<int, T> */
@@ -23,9 +21,7 @@ final class CircularBuffer
     /** @var int */
     private $writeCursor = -1;
 
-    /**
-     * @param positive-int $capacity
-     */
+    /** @param positive-int $capacity */
     private function __construct(int $capacity)
     {
         $this->capacity = $capacity;
@@ -70,9 +66,7 @@ final class CircularBuffer
         return $this->size === 0;
     }
 
-    /**
-     * @param T $element
-     */
+    /** @param T $element */
     public function write($element): void
     {
         if ($this->isFull()) {
@@ -84,9 +78,7 @@ final class CircularBuffer
         $this->size++;
     }
 
-    /**
-     * @return T
-     */
+    /** @return T */
     public function read()
     {
         if ($this->isEmpty()) {
