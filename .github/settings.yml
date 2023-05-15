@@ -13,24 +13,21 @@ branches:
         require_code_owner_reviews: true
         required_approving_review_count: 1
       required_status_checks:
-        contexts:
-          - "Code Coverage (8.0, locked)"
-          - "Coding Standards (8.0, locked)"
-          - "Dependency Analysis (8.0, locked)"
-          - "Mutation Tests (8.0, locked)"
-          - "Static Code Analysis (8.0, locked)"
-          - "Tests (7.3, highest)"
-          - "Tests (7.3, locked)"
-          - "Tests (7.3, lowest)"
-          - "Tests (7.4, highest)"
-          - "Tests (7.4, locked)"
-          - "Tests (7.4, lowest)"
-          - "Tests (8.0, highest)"
-          - "Tests (8.0, locked)"
-          - "Tests (8.0, lowest)"
-          - "Tests (8.1, highest)"
-          - "Tests (8.1, locked)"
-          - "Tests (8.1, lowest)"
+        checks:
+          - context: "Code Coverage (8.2, locked)"
+          - context: "Coding Standards (8.2, locked)"
+          - context: "Dependency Analysis (8.2, locked)"
+          - context: "Mutation Tests (8.2, locked)"
+          - context: "Static Code Analysis (8.2, locked)"
+          - context: "Tests (8.0, highest)"
+          - context: "Tests (8.0, locked)"
+          - context: "Tests (8.0, lowest)"
+          - context: "Tests (8.1, highest)"
+          - context: "Tests (8.1, locked)"
+          - context: "Tests (8.1, lowest)"
+          - context: "Tests (8.2, highest)"
+          - context: "Tests (8.2, locked)"
+          - context: "Tests (8.2, lowest)"
         strict: false
       restrictions: null
 
@@ -72,8 +69,6 @@ repository:
   default_branch: "master"
   delete_branch_on_merge: true
   description: "A circular buffer implementation in PHP"
-  enable_automated_security_fixes: true
-  enable_vulnerability_alerts: true
   has_downloads: true
   has_issues: true
   has_pages: false

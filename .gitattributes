@@ -1,5 +1,4 @@
 /.github/                       export-ignore
-/.tools/                        export-ignore
 /test/                          export-ignore
 /.editorconfig                  export-ignore
 /.gitattributes                 export-ignore
@@ -14,4 +13,5 @@
 /phpstan-baseline.neon          export-ignore
 /psalm.xml                      export-ignore
 /psalm-baseline.xml             export-ignore
+/renovate.json                  export-ignore
 /update-license.php             export-ignore
