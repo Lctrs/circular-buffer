@@ -34,7 +34,7 @@ jobs:
           strict: true
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.29.0"
+        uses: "shivammathur/setup-php@2.36.0"
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
@@ -46,7 +46,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ramsey/composer-install@3.0.0"
+        uses: "ramsey/composer-install@3.1.1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
@@ -84,7 +84,7 @@ jobs:
         uses: "actions/checkout@v6.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.29.0"
+        uses: "shivammathur/setup-php@2.36.0"
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
@@ -93,7 +93,7 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ramsey/composer-install@3.0.0"
+        uses: "ramsey/composer-install@3.1.1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
@@ -118,7 +118,7 @@ jobs:
         uses: "actions/checkout@v6.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.29.0"
+        uses: "shivammathur/setup-php@2.36.0"
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
@@ -127,7 +127,7 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ramsey/composer-install@3.0.0"
+        uses: "ramsey/composer-install@3.1.1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
@@ -179,7 +179,7 @@ jobs:
         uses: "actions/checkout@v6.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.29.0"
+        uses: "shivammathur/setup-php@2.36.0"
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
@@ -191,7 +191,7 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ramsey/composer-install@3.0.0"
+        uses: "ramsey/composer-install@3.1.1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
@@ -219,7 +219,7 @@ jobs:
         uses: "actions/checkout@v6.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.29.0"
+        uses: "shivammathur/setup-php@2.36.0"
         with:
           coverage: "xdebug"
           php-version: "${{ matrix.php-version }}"
@@ -231,7 +231,7 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ramsey/composer-install@3.0.0"
+        uses: "ramsey/composer-install@3.1.1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
@@ -264,7 +264,7 @@ jobs:
         uses: "actions/checkout@v6.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@2.29.0"
+        uses: "shivammathur/setup-php@2.36.0"
         with:
           coverage: "xdebug"
           php-version: "${{ matrix.php-version }}"
@@ -273,7 +273,7 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ramsey/composer-install@3.0.0"
+        uses: "ramsey/composer-install@3.1.1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
